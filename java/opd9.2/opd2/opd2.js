@@ -1,51 +1,42 @@
 const winkelmandje = ["Bananen", "Whiskey", "Chips", "Bonen", "Aardappelen"];
 
+var aantal = winkelmandje.length;
+document.getElementById('opdracht1').innerHTML = "Aantal producten in het winkelmandje is: + Aantal;"
 
-var aantalProductenElement = document.getElementById("aantalProducten");
-aantalProductenElement.innerText = "Er zitten " + winkelmandje.length + " producten in uw winkelmand.";
+document.getElementById('opdracht2').innerHTML = winkelmandje.join('br');
 
+document.getElementById('opdracht3').innerHTML = 'Het 4e product is: ' +winkelmandje
 
-var vierdeProductElement = document.getElementById("vierdeProduct");
-vierdeProductElement.innerText = winkelmandje[3] + " staat op de vierde plek in uw winkelmand.";
-
-
-winkelmandje[1] = "Bier";
-
+winkelmandje[1] = 'Bier';
+document.getElementById('opdracht4').innerHTML = 'whiskey is vervangen door biet: ' + winkelmandje.join(', ')
 
 function addProduct() {
-    var nieuwProduct = prompt("Voer een nieuw product in:");
+    const nieuwProduct = prompt("voer het nieuwe roduct in:");
     winkelmandje.push(nieuwProduct);
-    document.getElementById("opdracht5").innerHTML = winkelmandje;
-
+    document.getElementById("opdracht5").innerHTML = winkelmandje
 }
+if (winkelmandje.length > 1){
+    document.getElementById("opdracht6").innerHTML = "<p>U heeft genoeg producten om te tonen </p>"
+    + winkelmandje.join('br');
+    } else {
+        document.getElementById("opdracht6").innerHTML =  "<p>U heeft genoeg producten om te tonen </p>"
 
 
-var productenInfoElement = document.getElementById("productenInfo");
-if (winkelmandje.length > 1) {
-    productenInfoElement.innerText = "Uw producten zijn: " + winkelmandje.join(", ");
-} else {
-    productenInfoElement.innerText = "U heeft niet genoeg producten om te tonen.";
-}
+    }
+    ////
+    if (winkelmandje[4] =='Drop') {
+        document.getElementById("opdracht7").innerHTML = "<p> U heeft drop </p>"
+    } else { document.getElementById("opdracht7").innerHTML = "<p> U heeft drop </p>"
+ }
+ 
+document.getElementById("opdracht8").innerHTML = "<p> Producten met spaties </p>"
++ winkelmandje.join(' - ')
 
+document.getElementById('opdracht9').innerHTML ="Oude winkelmand: " + winkelmandje.join(', ')
 
-var dropCheckElement = document.getElementById("winkelmandFout");
-if (winkelmandje[4] === "Drop") {
-    dropCheckElement.innerText = "U heeft geen drop.";
-} else {
-    dropCheckElement.innerText = "U heeft wel drop!";
-}
+winkelmandje.splice(0,2)
+document.getElementById('nieuwewinkelmand').innerHTML = "Nieuwe winkelmand: " + winkelmandje.join(', ')
 
-
-winkelmandje = winkelmandje.join(" ");
-document.getElementById("alleProducten").innerText = "Uw producten zijn: " + winkelmandje;
-
-
-var oudeWinkelmandElement = document.getElementById("productToegevoegd");
-oudeWinkelmandElement.innerText = "Oude winkelmand: " + winkelmandje;
-winkelmandje.splice(0, 2);
-var nieuweWinkelmand = winkelmandje.join(", ");
-oudeWinkelmandElement.innerText += "\nNieuwe winkelmand: " + nieuweWinkelmand;
-
-
-winkelmandje.sort();
-document.getElementById("winkelmandFout").innerText = "Gesorteerde producten: " + winkelmandje;
+const winkelmand = ["Bananen", "Whiskey", "Chips", "Bonen", "Aardappelen"];
+winkelmand.sort();
+document.getElementById('opdracht10').innerHTML = 'Gesorteerd array: ' + winkelmand.join(', ')
