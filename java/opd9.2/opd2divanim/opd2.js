@@ -3,7 +3,7 @@ var direction = 1;
 var id = setInterval(frame, 10);
 
 function frame() {
-    if (pos == 350) { 
+    if (pos >= window.innerWidth - 50) { 
         direction = -1; 
     } else if (pos <= 0) {
         direction = 1; 

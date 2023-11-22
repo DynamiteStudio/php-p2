@@ -2,7 +2,7 @@ var pos = 0;
 var id = setInterval(frame, 10);
 
 function frame() {
-    if (pos == 350) {
+    if (pos >= window.innerWidth - 50) {
         clearInterval(id);
     } else {
         pos++; 
